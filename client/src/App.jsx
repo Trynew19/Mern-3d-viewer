@@ -112,7 +112,7 @@ export default function App() {
           <input type="checkbox" checked={wireframe} onChange={() => setWireframe(!wireframe)} className="switch" />
         </div>
 
-        <button onClick={saveConfig} className="premium-save">Sync to MongoDB</button>
+        <button onClick={saveConfig} className="premium-save">Save</button>
       </div>
 
       {/* Main 3D Stage */}
