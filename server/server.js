@@ -20,7 +20,7 @@ app.get("/test", (req, res) => {
     res.send("3D Viewer API");
 });
 app.post('/api/upload', upload.single('file'), (req, res) => {
-    res.json({ url: `http://localhost:5000/uploads/${req.file.filename}` });
+    res.json({ url: `https://mern-3dviewer.onrender.com/uploads/${req.file.filename}` });
 });
 
 app.post('/api/settings', async (req, res) => {

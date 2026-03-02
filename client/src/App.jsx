@@ -52,7 +52,7 @@ export default function App() {
   const hdriPresets = ['studio', 'city', 'apartment', 'night', 'sunset', 'warehouse', 'forest'];
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/settings').then(res => {
+    axios.get('https://mern-3dviewer.onrender.com/api/settings').then(res => {
       if (res.data.modelUrl) {
         setModelUrl(res.data.modelUrl);
         setBgColor(res.data.bgColor || '#0f172a');
@@ -66,12 +66,12 @@ export default function App() {
   const handleUpload = async (e) => {
     const fd = new FormData();
     fd.append('file', e.target.files[0]);
-    const res = await axios.post('http://localhost:5000/api/upload', fd);
+    const res = await axios.post('https://mern-3dviewer.onrender.com/api/upload', fd);
     setModelUrl(res.data.url);
   };
 
   const saveConfig = () => {
-    axios.post('http://localhost:5000/api/settings', { modelUrl, bgColor, wireframe, matColor, hdri });
+    axios.post('https://mern-3dviewer.onrender.com/api/settings', { modelUrl, bgColor, wireframe, matColor, hdri });
     alert("Model Saved .");
   };
 
