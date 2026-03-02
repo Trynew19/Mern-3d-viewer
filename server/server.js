@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
-mongoose.connect('mongodb://127.0.0.1:27017/3dviewer_final');
+mongoose.connect('mongodb+srv://chauhankrishana42_db_user:3w4QJV0YkkpP8597@qullep3d.mkfmok2.mongodb.net/?appName=QULLEP3D/QULEEP3dviewer');
 
 const Config = mongoose.model('Config', new mongoose.Schema({
     modelUrl: String, bgColor: String, wireframe: Boolean, matColor: String, hdri: String
