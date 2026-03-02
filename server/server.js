@@ -9,7 +9,7 @@ const app = express();
 
 // --- CORS FIX START ---
 app.use(cors({
-    origin: '*', // Sabhi origins allow kar do temporary
+    origin: "https://mern-3d-viewer-arqc.vercel.app", 
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
