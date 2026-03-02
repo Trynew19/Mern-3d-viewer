@@ -9,9 +9,9 @@ const app = express();
 
 // --- CORS FIX START ---
 app.use(cors({
-    origin: "https://mern-3d-viewer-arqc.vercel.app",
+    origin: '*', // Sabhi origins allow kar do temporary
     methods: ["GET", "POST"],
-    credentials: true
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 // --- CORS FIX END ---
 
@@ -47,8 +47,7 @@ app.get("/", (req, res) => {
 });
 
 app.post('/api/upload', upload.single('file'), (req, res) => {
-    if (!req.file) return res.status(400).json({ error: "No file uploaded" });
-    // URL change to your render domain
+    if (!req.file) return res.status(400).json({ error: "No file" });
     const fileUrl = `https://mern-3dviewer.onrender.com/uploads/${req.file.filename}`;
     res.json({ url: fileUrl });
 });
