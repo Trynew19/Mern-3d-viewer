@@ -16,7 +16,7 @@ const Config = mongoose.model('Config', new mongoose.Schema({
 }));
 
 const upload = multer({ dest: 'uploads/' });
-app.get("/", (req, res) => {
+app.get("/test", (req, res) => {
     res.send("3D Viewer API");
 });
 app.post('/api/upload', upload.single('file'), (req, res) => {
