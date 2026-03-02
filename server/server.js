@@ -9,7 +9,7 @@ const app = express();
 
 // --- CORS FIX START ---
 app.use(cors({
-    origin: "https://mern-3d-viewer-arqc.vercel.app", 
+    origin: "https://mern-3d-viewer-1.onrender.com", 
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
