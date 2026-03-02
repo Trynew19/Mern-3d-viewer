@@ -9,9 +9,9 @@ const app = express();
 
 // --- CORS FIX START ---
 app.use(cors({
-    origin: "https://mern-3d-viewer-1.onrender.com", 
+    origin: "https://mern-3d-viewer-1.onrender.com", // Aapka Frontend URL
     methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    credentials: true
 }));
 // --- CORS FIX END ---
 
@@ -48,7 +48,8 @@ app.get("/", (req, res) => {
 
 app.post('/api/upload', upload.single('file'), (req, res) => {
     if (!req.file) return res.status(400).json({ error: "No file" });
-    const fileUrl = `https://mern-3dviewer.onrender.com/uploads/${req.file.filename}`;
+
+    const fileUrl = `https://mern-3d-viewer.onrender.com/uploads/${req.file.filename}`;
     res.json({ url: fileUrl });
 });
 
